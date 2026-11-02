@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wardrobe Guide &amp; Checklist</title>
+<style>
+:root{--bg:#f6f5f2;--card:#fff;--tx:#161616;--mu:#6a6a6a;--bd:#e2e0da;--ok:#1d7a3a;--okb:#e1f3e6;--no:#b3261e;--nob:#f9e3e1;--ac:#6B2737;--acb:#f3e4e8;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d0d0d;--card:#1a1a1a;--tx:#fff;--mu:#8a8a8a;--bd:#2a2a2a;--ok:#4caf50;--okb:#1a3a1a;--no:#f44336;--nob:#3a1a1a;--ac:#d98a9c;--acb:#2c1a20}}
+:root[data-theme="dark"]{--bg:#0d0d0d;--card:#1a1a1a;--tx:#fff;--mu:#8a8a8a;--bd:#2a2a2a;--ok:#4caf50;--okb:#1a3a1a;--no:#f44336;--nob:#3a1a1a;--ac:#d98a9c;--acb:#2c1a20}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 120px)}
+body{background:var(--bg);color:var(--tx);font-family:-apple-system,system-ui,"Segoe UI",Roboto,sans-serif;padding:clamp(16px,4vw,36px);max-width:980px;margin:0 auto}
+h1{font-size:clamp(22px,4vw,32px);letter-spacing:-.5px}
+h2{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:var(--mu);margin:26px 0 10px}
+.sub{color:var(--mu);font-size:12px;line-height:1.4;margin-top:3px}
+.cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(10px,2vw,18px)}
+.hd{font-size:12px;font-weight:700;padding:4px 10px;border-radius:20px;text-align:center;margin-bottom:8px}
+.w{background:var(--okb);color:var(--ok)}.a{background:var(--nob);color:var(--no)}
+.sw{background:var(--card);border-radius:10px;overflow:hidden;margin-bottom:8px;border:1px solid var(--bd)}
+.sw i{display:block;height:38px}
+.sw div{padding:6px 8px;font-size:12px;font-weight:600}
+.sw small{display:block;font-weight:400;color:var(--mu);font-size:10px;margin-top:2px}
+.new{font-size:9px;background:var(--ac);color:var(--bg);border-radius:8px;padding:1px 6px;margin-left:4px;vertical-align:middle}
+.top{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);z-index:5;padding:8px 0 6px}
+.primary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:24px 0 8px;padding:5px;background:var(--card);border:1px solid var(--bd);border-radius:16px;box-shadow:0 6px 20px rgba(40,20,20,.05)}
+.primary button{border:0;background:transparent;color:var(--mu);font-size:14px;font-weight:800;padding:12px 10px;border-radius:11px;cursor:pointer}
+.primary button.on{background:var(--ac);color:var(--bg)}
+.panel{animation:fade-in .2s ease-out}
+.guide-intro{background:var(--acb);border-radius:16px;padding:16px;margin:18px 0 4px;color:var(--ac)}
+.guide-intro b{font-size:15px}.guide-intro p{font-size:12px;line-height:1.5;margin-top:4px;color:var(--tx)}
+@keyframes fade-in{from{opacity:.5;transform:translateY(3px)}to{opacity:1;transform:none}}
+.seg{display:grid;grid-template-columns:1fr 1fr;background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:4px;gap:4px}
+.seg button{border:0;background:transparent;color:var(--mu);font-size:14px;font-weight:700;padding:10px;border-radius:10px}
+.seg button.on{background:var(--ac);color:var(--bg)}
+.seg span{font-weight:500;opacity:.8;margin-left:4px}
+.chips{display:flex;gap:6px;overflow-x:auto;padding:8px 0 2px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chips button{flex:none;border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:20px;padding:6px 12px;font-size:12px;font-weight:600}
+.stat{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:14px;margin:12px 0}
+.stat .n{font-size:26px;font-weight:800;letter-spacing:-1px}
+.stat .n small{font-size:13px;color:var(--mu);font-weight:500;letter-spacing:0}
+.bar{height:6px;background:var(--bd);border-radius:6px;overflow:hidden;margin-top:10px}
+.bar span{display:block;height:100%;background:var(--ok);width:0;transition:width .3s}
+.cat{display:flex;align-items:center;justify-content:space-between;font-size:15px;font-weight:800;margin:22px 0 8px}
+.cat span{font-size:11px;font-weight:700;color:var(--ac);background:var(--acb);padding:3px 9px;border-radius:12px}
+.it{display:flex;gap:10px;align-items:center;background:var(--card);border:1px solid var(--bd);border-left-width:6px;border-radius:12px;padding:11px 10px 11px 12px;margin-bottom:8px}
+.it .t{font-size:14px;font-weight:700}
+.it .n{font-size:11px;color:var(--mu);margin-top:2px;line-height:1.35}
+.it .m{flex:1;min-width:0}
+.q{font-size:12px;font-weight:800;color:var(--ac);background:var(--acb);border-radius:10px;padding:3px 8px;flex:none}
+.go{width:36px;height:36px;border-radius:50%;border:1.5px solid var(--ok);background:transparent;color:var(--ok);font-size:20px;font-weight:700;flex:none;line-height:1}
+.go.u{border-color:var(--mu);color:var(--mu)}
+.empty{text-align:center;color:var(--mu);font-size:13px;padding:30px 10px;line-height:1.5}
+.add{background:var(--card);border:1px dashed var(--bd);border-radius:14px;padding:12px;margin-top:18px}
+.add b{font-size:13px}
+.add input,.add select{width:100%;margin-top:8px;padding:10px;border-radius:10px;border:1px solid var(--bd);background:var(--bg);color:var(--tx);font-size:14px}
+.add button{width:100%;margin-top:10px;padding:11px;border-radius:10px;border:0;background:var(--ac);color:var(--bg);font-weight:700;font-size:14px}
+.hide{display:none!important}
+@media (min-width:760px){.check-layout{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:22px;align-items:start}.check-layout>.top{grid-column:1 / -1}.check-layout>.stat{margin-top:0}.check-layout>#list{grid-column:1 / -1}.check-layout>.add{grid-column:1 / -1}.guide-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 28px}.guide-grid h2{margin-top:18px}}
+@media (max-width:520px){body{padding:14px}.cols{gap:8px}.sw div{font-size:11px}.sw small{font-size:9px}.seg button{font-size:13px}.it{padding-left:9px}.it .t{font-size:13px}}
+
+.sws{display:flex;flex-wrap:wrap;gap:6px 4px;margin:10px 0 16px}
+.sk{width:66px;text-align:center;font-size:11px;color:var(--mu);background:none;border:0;position:relative;padding:2px 0;cursor:pointer}
+.sk i{display:block;width:44px;height:44px;border-radius:50%;margin:0 auto 4px;border:2px solid var(--bd)}
+.sk.on i{border-color:var(--ac);box-shadow:0 0 0 3px var(--acb)}
+.sk.on{color:var(--tx);font-weight:700}
+.sk em{position:absolute;top:-1px;right:8px;font-style:normal;font-size:9px;font-weight:800;background:var(--ok);color:#fff;border-radius:8px;padding:1px 5px}
+.cr{display:flex;gap:10px;align-items:center;background:var(--card);border:1.5px solid var(--bd);border-radius:12px;padding:10px;margin-bottom:8px;width:100%;text-align:left;color:var(--tx);cursor:pointer}
+.cr.on{border-color:var(--ac)}
+.cr i{width:36px;height:36px;border-radius:9px;flex:none;border:1px solid var(--bd)}
+.cr .m{flex:1;min-width:0}.cr .t{font-size:14px;font-weight:700}.cr .d{font-size:11px;color:var(--mu);margin-top:2px;line-height:1.35}
+.cr .h{font-size:10px;font-weight:800;color:var(--ok);margin-left:6px}
+.lb{font-size:11px;font-weight:800;padding:3px 9px;border-radius:10px;flex:none}
+.l3{background:var(--okb);color:var(--ok)}.l2{background:var(--acb);color:var(--ac)}.l1{background:var(--bg);color:var(--mu);border:1px solid var(--bd)}.l0{background:var(--nob);color:var(--no)}
+.out{display:flex;gap:18px;background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:16px;margin-top:16px;align-items:center}
+.fg{width:84px;flex:none;display:flex;flex-direction:column;gap:3px}
+.fg i{display:block;border:1px solid var(--bd)}
+.out ul{list-style:none;font-size:13px;line-height:1.75;min-width:0}.out li span{color:var(--mu);font-size:11px;display:inline-block;width:62px}
+.warn{font-size:12px;color:var(--no);background:var(--nob);border-radius:10px;padding:8px 10px;margin-top:10px}
+.tgl{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;margin:4px 0 12px}
+.tgl input{width:18px;height:18px;accent-color:var(--ac)}
+details.mk{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:10px 12px;margin-top:18px;font-size:13px}
+details.mk summary{font-weight:700;cursor:pointer}
+details.mk p{font-size:11px;color:var(--mu);margin:6px 0 4px;line-height:1.4}
+details.mk .chips{flex-wrap:wrap;overflow:visible}
+details.mk .chips button.on{background:var(--ok);color:#fff;border-color:var(--ok)}
+</style>
+</head>
+<body>
+<h1>Your Colour Guide + Wardrobe Checklist</h1>
+<p class="sub">Neutral-warm undertone · Deep brown skin · 5'7" · Bengaluru · Office, occasions, gym, football</p>
+
+<nav class="primary" aria-label="Main sections">
+<button id="checktab" class="on" onclick="section(0)">Checklist</button>
+<button id="guidetab" onclick="section(1)">Colour guide</button>
+<button id="combotab" onclick="section(2)">Outfits</button>
+</nav>
+
+<main id="checkpanel" class="panel check-layout">
+<div class="top">
+<div class="seg"><button id="tb" onclick="tab(0)">To buy<span id="cb"></span></button><button id="to" onclick="tab(1)">Owned<span id="co"></span></button></div>
+<div class="chips" id="chips"></div>
+</div>
+<div class="stat"><div class="n"><span id="own">0</span> <small>of <span id="all">0</span> pieces owned</small></div><div class="bar"><span id="bar"></span></div></div>
+<div id="list"></div>
+<div class="add hide" id="addbox">
+<b>Add something you already own</b>
+<input id="an" placeholder="e.g. Navy polo, Zara">
+<select id="ac"></select>
+<select id="ak"></select>
+<button onclick="addOwn()">Add to Owned</button>
+</div>
+</main>
+
+<main id="guidepanel" class="panel hide">
+<div class="guide-intro"><b>Use colour to make getting dressed easier.</b><p>Keep your strongest colours close to your face, then build outfits with the darker, quieter shades below.</p></div>
+<div class="guide-grid">
+<section><h2>Tops · Wear</h2><div class="hd w">BEST COLOURS</div><div id="wt"></div></section>
+<section><h2>Tops · Avoid</h2><div class="hd a">SKIP THESE</div><div id="at"></div></section>
+<section><h2>Bottoms · Wear</h2><div class="hd w">BEST COLOURS</div><div id="wb"></div></section>
+<section><h2>Bottoms · Avoid</h2><div class="hd a">SKIP THESE</div><div id="ab"></div></section>
+</div>
+</main>
+
+<main id="combopanel" class="panel hide">
+<div class="guide-intro"><b>What should I wear today?</b><p>Start with a top or a bottom you want to wear, tap its colour, and see what goes best with it.</p></div>
+<div id="cmb"></div>
+</main>
+
+<script>
+var C={navy:"#1a1a2e",burg:"#6B2737",forest:"#1B4D3E",plum:"#5B3A6B",black:"#1a1a1a",mustard:"#B8860B",olive:"#4B5320",choc:"#3B2418",char:"#36454F",stone:"#A9A9A4",beige:"#E8D5B0",orange:"#E07B39",pink:"#FFB6C1",lgrey:"#d3d3d3",bblue:"#ADD8E6",camel:"#C68642",khaki:"#8B7355"};
+function sw(n,c,r,nw){return '<div class="sw"><i style="background:'+C[c]+'"></i><div>'+n+(nw?'<span class="new">NEW</span>':'')+'<small>'+r+'</small></div></div>'}
+function fill(id,a){document.getElementById(id).innerHTML=a.map(function(x){return sw(x[0],x[1],x[2],x[3])}).join("")}
+fill("wt",[["Deep Navy","navy","Your #1 colour"],["Burgundy / Maroon","burg","Rich, warm-cool balance"],["Olive","olive","From the reel",1],["Dark Chocolate","choc","From the reel",1],["Forest Green","forest","Makes skin pop"],["Plum / Mauve","plum","Your proven winner"],["True Black","black","Always sharp"],["Mustard","mustard","Use sparingly"]]);
+fill("at",[["Ivory / Warm Beige","beige","Dulls your face"],["Orange / Rust","orange","Clashes hard"],["Baby / Dusty Pink","pink","Washes you out"],["Light Grey top","lgrey","Too low contrast"],["Baby Blue","bblue","Flat"],["Camel / Tan","camel","Blends into skin"]]);
+fill("wb",[["Black","black","Go-to always"],["Charcoal","char","Pairs with everything"],["Dark Navy","navy","Casual and polished"],["Dark Burgundy","burg","Statement pant"],["Cool Stone / Mid Grey","stone","Max 1 pair, dark tops only",1]]);
+fill("ab",[["Camel Chinos","camel","Too warm"],["Warm Beige / Cream","beige","Washes the look"],["Warm Khaki","khaki","Muddy"],["Very Light Grey","lgrey","Too low impact"]]);
+
+/* [id, name, qty, colour, note] */
+var D=[
+["Trousers",[["t1","Tailored trousers, black",2,"black","Wool blend, high-rise"],["t2","Tailored trousers, charcoal",1,"char","Office workhorse"],["t3","Chinos, dark navy",1,"navy","Smart casual"],["t4","Dark denim, black or indigo",1,"black","Straight or slight taper"],["t5","Trousers, dark burgundy",1,"burg","Statement piece"],["t6","Chinos, olive",1,"olive","Second casual pair"],["t7","Trousers, cool stone grey",1,"stone","Dark tops only"]]],
+["Shirts",[["s1","Oxford shirt, navy",2,"navy","Long sleeve, rolls up"],["s2","Fine-cotton shirt, black",1,"black","Office and occasions"],["s3","Shirt, olive",1,"olive","From the reel"],["s4","Shirt, maroon",1,"burg","From the reel"],["s5","Shirt, dark chocolate",1,"choc","From the reel"],["s6","Shirt, forest green",1,"forest",""],["s7","Heavyweight tee, black",3,"black","Ends at crotch line"],["s8","Heavyweight tee, navy",2,"navy",""],["s9","Polo, plum",1,"plum","Smart casual"],["s10","Polo, black or navy",2,"navy","Office casual"]]],
+["Shoes",[["h1","Leather derbies or loafers, black",1,"black","Resoleable"],["h2","Minimal leather sneakers, black",1,"black","Tonal with trousers"],["h3","Leather shoes, dark chocolate",1,"choc","With navy and charcoal"]]],
+["Belts",[["b1","Leather belt, black",1,"black","Match black shoes"],["b2","Leather belt, dark brown",1,"choc","Match chocolate shoes"]]],
+["Jackets & layers",[["j1","Unstructured blazer, navy",1,"navy","Unlined, hip length"],["j2","Overshirt, black or olive",1,"olive","Easy to remove in heat"],["j3","Bomber or coach jacket",1,"black","Cropped, black or navy"],["j4","Leather or suede jacket",1,"choc","Invest, black or chocolate"],["j5","Light field jacket, olive",1,"olive","Evenings, rain"],["j6","Fine-gauge crewneck, navy",1,"navy","Merino or cotton"],["j7","Fine-gauge knit, charcoal",1,"char",""],["j8","Cardigan or zip knit",1,"burg","Burgundy or plum"]]],
+["Occasion wear",[["o1","Two-piece suit",1,"navy","Navy or charcoal, tailored"],["o2","Dress shirt, black or burgundy",2,"burg","Evenings and weddings"],["o3","Kurta or bandhgala",1,"forest","Forest, plum or black"],["o4","Tie or pocket square",2,"plum","Plum or burgundy"]]],
+["Gym & football",[["g1","Moisture-wicking tee",4,"black","Black, navy or charcoal"],["g2","Training shorts, black",3,"black","Above the knee"],["g3","Joggers, black",1,"black",""],["g4","Track jacket",1,"navy","Navy or black"],["g5","Training shoes",1,"black","Flat sole for lifting"],["g6","Football boots",1,"black","Match your pitch"],["g7","Football socks and shin guards",2,"black","Pairs"]]],
+["Accessories",[["a1","Minimal watch",1,"black","Steel or black"],["a2","Sunglasses",1,"black",""]]]
+];
+var CAT=D.map(function(d){return d[0]}),CK=Object.keys(C).filter(function(k){return ["black","navy","burg","olive","choc","forest","plum","char","stone","mustard"].indexOf(k)>-1});
+var S={c:{},x:[]},cur=0,fil="",activeSection=0;
+try{var r=JSON.parse(localStorage.getItem("wg2")||"null");if(r)S=r}catch(e){}
+function save(){try{localStorage.setItem("wg2",JSON.stringify(S))}catch(e){}}
+function tab(i){cur=i;render()}
+function section(i){activeSection=i;["checkpanel","guidepanel","combopanel"].forEach(function(id,j){document.getElementById(id).className=(j==0?"panel check-layout":"panel")+(i==j?"":" hide")});["checktab","guidetab","combotab"].forEach(function(id,j){document.getElementById(id).className=i==j?"on":""});if(i==2)renderCombo()}
+function bump(id,d,q){S.c[id]=Math.max(0,Math.min(q,(S.c[id]||0)+d));save();render()}
+function rm(i){S.x.splice(i,1);save();render()}
+function addOwn(){var n=document.getElementById("an").value.trim();if(!n)return;S.x.push({n:n,cat:document.getElementById("ac").value,k:document.getElementById("ak").value});document.getElementById("an").value="";save();render()}
+function jump(c){var e=document.getElementById("cat-"+c);if(e)e.scrollIntoView({behavior:"smooth"})}
+document.getElementById("ac").innerHTML=CAT.map(function(c){return '<option>'+c+'</option>'}).join("");
+document.getElementById("ak").innerHTML=CK.map(function(k){return '<option value="'+k+'">'+k+'</option>'}).join("");
+function render(){
+ var h="",need=0,have=0,nb=0,no=0,all=0;
+ D.forEach(function(g){var rows="",cnt=0;
+  g[1].forEach(function(x){var o=S.c[x[0]]||0;all+=x[2];have+=o;
+   if(cur==0&&o<x[2]){nb++;cnt++;rows+='<div class="it" style="border-left-color:'+C[x[3]]+'"><div class="m"><div class="t">'+x[1]+'</div><div class="n">'+(o?o+' of '+x[2]+' owned · ':'')+x[4]+'</div></div><span class="q">×'+(x[2]-o)+'</span><button class="go" onclick="bump(\''+x[0]+'\',1,'+x[2]+')">+</button></div>'}
+   if(cur==1&&o>0){cnt++;rows+='<div class="it" style="border-left-color:'+C[x[3]]+'"><div class="m"><div class="t">'+x[1]+'</div><div class="n">'+x[4]+'</div></div><span class="q">'+o+' / '+x[2]+'</span><button class="go u" onclick="bump(\''+x[0]+'\',-1,'+x[2]+')">−</button></div>'}
+  });
+  if(cur==1)S.x.forEach(function(x,i){if(x.cat==g[0]){cnt++;rows+='<div class="it" style="border-left-color:'+C[x.k]+'"><div class="m"><div class="t">'+x.n.replace(/</g,"&lt;")+'</div><div class="n">Added by you</div></div><button class="go u" onclick="rm('+i+')">−</button></div>'}});
+  if(cnt&&(!fil||fil==g[0]))h+='<div class="cat" id="cat-'+g[0]+'">'+g[0]+'<span>'+cnt+'</span></div>'+rows
+ });
+ D.forEach(function(g){g[1].forEach(function(x){if(S.c[x[0]])no+=1})});
+ no+=S.x.length;
+ if(!h)h='<div class="empty">'+(cur==0?'Everything on the list is owned. Nice.':'Nothing here yet. Tap + on a piece in To buy when you get it, or add something you already own below.')+'</div>';
+ document.getElementById("list").innerHTML=h;
+ document.getElementById("own").textContent=have+S.x.length;
+ document.getElementById("all").textContent=all+S.x.length;
+ document.getElementById("bar").style.width=(all?have/all*100:0)+"%";
+ document.getElementById("cb").textContent=nb;document.getElementById("co").textContent=no;
+ document.getElementById("tb").className=cur==0?"on":"";document.getElementById("to").className=cur==1?"on":"";
+ document.getElementById("addbox").className="add"+(cur==1?"":" hide");
+ document.getElementById("chips").innerHTML=CAT.map(function(c){return '<button onclick="fil=fil==\''+c+'\'?\'\':\''+c+'\';render()" style="'+(fil==c?'background:var(--ac);color:var(--bg)':'')+'">'+c+'</button>'}).join("")
+}
+render();
+
+/* ---------- Outfit builder ---------- */
+var TOPS=[["navy","Navy"],["burg","Maroon"],["olive","Olive"],["choc","Chocolate"],["forest","Forest"],["plum","Plum"],["black","Black"],["mustard","Mustard"]];
+var BOTS=[["black","Black"],["char","Charcoal"],["navy","Navy"],["burg","Burgundy"],["olive","Olive"],["stone","Stone grey"]];
+var NM={black:"Black",char:"Charcoal",navy:"Navy",burg:"Burgundy",olive:"Olive",stone:"Stone grey",choc:"Chocolate",forest:"Forest",plum:"Plum",mustard:"Mustard"};
+/* scores per bottom, in BOTS order: black, char, navy, burg, olive, stone. 3 best, 2 good, 1 risky, 0 avoid */
+var M={
+navy:[[2,"Tonal and sharp, adds depth"],[3,"Cool and office-ready"],[1,"Too matchy, vary the fabric"],[2,"Jewel contrast, good for evenings"],[2,"Earthy and relaxed"],[3,"Strong contrast, lifts your face"]],
+burg:[[3,"Sharp and rich"],[3,"Balanced, never fails"],[2,"Deep and quiet"],[1,"Heavy, only in different fabrics"],[0,"Clashes, looks festive"],[3,"Reel combo, dark top over stone"]],
+olive:[[2,"Heavy but sharp at night"],[3,"Tonal and earthy"],[2,"Quiet and clean"],[0,"Clashes"],[1,"Keep the two shades clearly different"],[3,"Reel combo, dark top over stone"]],
+choc:[[2,"Dark and moody"],[2,"Soft, low contrast"],[3,"Soft and office-ready"],[1,"Too close in depth"],[2,"Earthy and tonal"],[3,"Soft, warm contrast"]],
+forest:[[3,"Makes the green pop"],[3,"Deep and balanced"],[2,"Cool jewel tones"],[0,"Competing strong tones"],[1,"Two greens fight"],[2,"Works, keep the top darker"]],
+plum:[[3,"Jewel tone stands out"],[3,"Soft and balanced"],[2,"Cool and quiet"],[1,"Both heavy and warm"],[1,"Muddy together"],[2,"Light bottom lifts the plum"]],
+black:[[2,"Sharp but heavy in heat, add a layer"],[2,"Quiet and clean"],[2,"Safe and smart"],[2,"Rich accent bottom"],[2,"Earthy contrast"],[3,"Crisp contrast, strongest look"]],
+mustard:[[3,"Makes mustard glow"],[3,"Grounded and sharp"],[3,"Classic contrast"],[1,"Loud together"],[1,"Low contrast, muddy"],[1,"Too light overall, skip"]]
+};
+var SH={black:["black","choc"],char:["black","choc"],navy:["choc","black"],burg:["black","choc"],olive:["choc","black"],stone:["black","choc"]};
+var LBL=["Avoid","Risky","Good","Best"];
+var Q={m:0,sel:"navy",pick:null,only:false,open:false},MY={t:{},b:{}};
+try{var mm=JSON.parse(localStorage.getItem("wg3")||"null");if(mm)MY=mm}catch(e){}
+function owned(){var o={t:{},b:{}};
+ D.forEach(function(g){if(g[0]!="Shirts"&&g[0]!="Trousers")return;var k=g[0]=="Shirts"?"t":"b";g[1].forEach(function(x){if(S.c[x[0]]>0)o[k][x[3]]=1})});
+ S.x.forEach(function(x){if(x.cat=="Shirts")o.t[x.k]=1;if(x.cat=="Trousers")o.b[x.k]=1});return o}
+function has(k,c){var o=owned();return !!(MY[k][c]||o[k][c])}
+function cmode(m){Q.m=m;Q.sel=m?"black":"navy";Q.pick=null;renderCombo()}
+function cpick(k){Q.sel=k;Q.pick=null;renderCombo()}
+function cpart(k){Q.pick=k;renderCombo()}
+function conly(v){Q.only=v;Q.pick=null;renderCombo()}
+function chv(k,c){MY[k][c]=!MY[k][c];try{localStorage.setItem("wg3",JSON.stringify(MY))}catch(e){}renderCombo()}
+function renderCombo(){
+ var top=Q.m==0,own=top?TOPS:BOTS,pk=top?"b":"t",sk=top?"t":"b",oth=top?BOTS:TOPS;
+ var bi=BOTS.map(function(b){return b[0]}).indexOf(Q.sel);
+ var h='<div class="seg"><button class="'+(top?'on':'')+'" onclick="cmode(0)">Start with a top</button><button class="'+(top?'':'on')+'" onclick="cmode(1)">Start with a bottom</button></div>';
+ h+='<h2>Pick your '+(top?'top':'bottom')+' colour</h2><div class="sws">'+own.map(function(c){return '<button class="sk'+(c[0]==Q.sel?' on':'')+'" onclick="cpick(\''+c[0]+'\')"><i style="background:'+C[c[0]]+'"></i>'+c[1]+(has(sk,c[0])?'<em>✓</em>':'')+'</button>'}).join("")+'</div>';
+ var arr=oth.map(function(p,i){var m=top?M[Q.sel][i]:M[p[0]][bi];return{k:p[0],n:p[1],s:m[0],r:m[1],h:has(pk,p[0])}});
+ if(Q.only)arr=arr.filter(function(a){return a.h});
+ arr.sort(function(a,b){return b.s-a.s||(b.h?1:0)-(a.h?1:0)});
+ h+='<label class="tgl"><input type="checkbox" '+(Q.only?'checked ':'')+'onchange="conly(this.checked)">Only show '+(top?'bottoms':'tops')+' I have</label>';
+ h+='<h2>Best '+(top?'bottoms':'tops')+' with '+NM[Q.sel]+'</h2>';
+ if(!arr.length)h+='<div class="empty">No '+(top?'bottoms':'tops')+' marked as owned that go with this. Mark what you have below, or switch off the filter.</div>';
+ if(arr.length&&!arr.some(function(a){return a.k==Q.pick}))Q.pick=arr[0].k;
+ h+=arr.map(function(a){return '<button class="cr'+(a.k==Q.pick?' on':'')+'" onclick="cpart(\''+a.k+'\')"><i style="background:'+C[a.k]+'"></i><span class="m"><div class="t">'+a.n+(a.h?'<span class="h">YOU HAVE</span>':'')+'</div><div class="d">'+a.r+'</div></span><span class="lb l'+a.s+'">'+LBL[a.s]+'</span></button>'}).join("");
+ if(arr.length){
+  var sel=arr.filter(function(a){return a.k==Q.pick})[0],tk=top?Q.sel:sel.k,bk=top?sel.k:Q.sel;
+  var sh=SH[bk],ly=["black","navy","char","olive","choc"].filter(function(c){return c!=tk&&c!=bk&&!(c=="olive"&&(tk=="burg"||bk=="burg"))}).slice(0,2);
+  h+='<div class="out"><div class="fg"><i style="height:40px;border-radius:10px 10px 4px 4px;background:'+C[tk]+'"></i><i style="height:80px;border-radius:4px;background:'+C[bk]+'"></i><i style="height:12px;width:80%;margin:0 auto;border-radius:3px 3px 8px 8px;background:'+C[sh[0]]+'"></i></div><ul>'
+  +'<li><span>Top</span><b>'+NM[tk]+'</b></li><li><span>Bottom</span><b>'+NM[bk]+'</b></li>'
+  +'<li><span>Shoes</span><b>'+NM[sh[0]]+'</b> or '+NM[sh[1]].toLowerCase()+'</li><li><span>Belt</span>Match the shoes</li>'
+  +'<li><span>Layer</span>'+ly.map(function(c){return NM[c]}).join(" or ")+' blazer, overshirt or bomber</li></ul></div>';
+  if(sel.s<=1)h+='<div class="warn">'+(sel.s==0?'Not recommended: ':'Risky: ')+sel.r+'. Pick a higher-rated pair if you can.</div>';
+ }
+ h+='<details class="mk"'+(Q.open?' open':'')+' ontoggle="Q.open=this.open"><summary>Mark what I have</summary><p>Shirts and trousers you tick in the Checklist count automatically. Tap here to add others.</p>'
+ +'<b>Tops</b><div class="chips">'+TOPS.map(function(c){return '<button class="'+(has("t",c[0])?'on':'')+'" onclick="chv(\'t\',\''+c[0]+'\')">'+c[1]+'</button>'}).join("")+'</div>'
+ +'<b>Bottoms</b><div class="chips">'+BOTS.map(function(c){return '<button class="'+(has("b",c[0])?'on':'')+'" onclick="chv(\'b\',\''+c[0]+'\')">'+c[1]+'</button>'}).join("")+'</div></details>';
+ document.getElementById("cmb").innerHTML=h
+}
+</script>
+</body>
+</html>
